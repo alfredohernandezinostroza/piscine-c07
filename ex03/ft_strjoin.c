@@ -6,7 +6,7 @@
 /*   By: aantonio <aantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 12:59:27 by aantonio          #+#    #+#             */
-/*   Updated: 2022/08/18 14:54:46 by aantonio         ###   ########.fr       */
+/*   Updated: 2022/08/18 15:06:49 by aantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	get_total_size(char **words, int size)
 	int	count;
 	int	nth_word;
 
+	count = 0;
 	nth_word = 0;
 	while (nth_word < size)
 	{
