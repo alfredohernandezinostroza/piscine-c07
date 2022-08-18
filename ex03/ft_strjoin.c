@@ -6,7 +6,7 @@
 /*   By: aantonio <aantonio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 12:59:27 by aantonio          #+#    #+#             */
-/*   Updated: 2022/08/18 15:06:49 by aantonio         ###   ########.fr       */
+/*   Updated: 2022/08/18 15:38:06 by aantonio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,12 @@ int	get_total_size(char **words, int size)
 
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
-	int		total_size;
 	int		current_word;
 	int		word_cursor;
 	int		result_cursor;
 	char	*result;
 
-	total_size = get_total_size(strs, size);
-	result = malloc(total_size + (size - 1) + 1);
-	word_cursor = 0;
+	result = malloc(get_total_size(strs, size) + (size - 1) + 1);
 	result_cursor = 0;
 	current_word = 0;
 	while (current_word < size)
@@ -57,11 +54,10 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		}
 		if (current_word < size - 1)
 		{
-			result[result_cursor] = *sep;
-			result_cursor++;
+			result[result_cursor++] = *sep;
 		}
 		current_word++;
 	}
-	result[total_size + size - 1] = 0;
+	result[get_total_size(strs, size) + size - 1] = 0;
 	return (result);
 }
